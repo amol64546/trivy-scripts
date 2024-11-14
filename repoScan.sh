@@ -1,0 +1,1 @@
+trivy repo ${repoUrl}
