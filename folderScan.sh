@@ -1,1 +1,1 @@
-trivy fs ${path}
+trivy fs $path
