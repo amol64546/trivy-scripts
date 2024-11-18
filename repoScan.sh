@@ -1,1 +1,1 @@
-trivy repo ${repoUrl}
+trivy repo $repoUrl
