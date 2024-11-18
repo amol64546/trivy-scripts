@@ -21,9 +21,9 @@ if [ $? -ne 0 ]; then
 fi
 
 # Step 3: Make the API call using the captured JSON output
-echo "Api call to: ${SERVER_URL}/tf-entity-ingestion/v1.0/schemas/${SCHEMA_ID}/instance?upsert=true"
+echo "Api call to: $SERVER_URL/tf-entity-ingestion/v1.0/schemas/$SCHEMA_ID/instance?upsert=true"
 response=$(curl --silent --location \
-  "${SERVER_URL}/tf-entity-ingestion/v1.0/schemas/${SCHEMA_ID}/instance?upsert=true" \
+  "$SERVER_URL/tf-entity-ingestion/v1.0/schemas/$SCHEMA_ID/instance?upsert=true" \
   --header "Content-Type: application/json" \
   --header "Authorization: $BEARER_AUTH" \
   --data "$json_output")
