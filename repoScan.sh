@@ -31,7 +31,7 @@ add_id_to_json() {
 
 # Call the function and print the updated JSON
 updated_json=$(add_id_to_json "$json_output")
-
+echo "$updated_json"
 
 # Step 3: Make the API call using the captured JSON output
 response=$(curl --silent --location \
@@ -41,4 +41,4 @@ response=$(curl --silent --location \
   --data "$updated_json")
 
 # Step 3: Print the API response
-echo "$response"
+# echo "$response"
