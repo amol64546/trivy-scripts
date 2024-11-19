@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Validate required environment variables
-if [ -z "$REPO_URL" ] || [ -z "$SCHEMA_ID" ] || [ -z "$SERVER_URL" ] || [ -z "$BEARER_AUTH" ]; then
+if [ -z "$REPO_URL" ]; then
   echo "Error: Missing required environment variables."
   exit 1
 fi
@@ -32,13 +32,3 @@ add_id_to_json() {
 # Call the function and print the updated JSON
 updated_json=$(add_id_to_json "$json_output")
 echo "$updated_json"
-
-# Step 3: Make the API call using the captured JSON output
-response=$(curl --silent --location \
-  "$SERVER_URL/tf-entity-ingestion/v1.0/schemas/$SCHEMA_ID/instance?upsert=true" \
-  --header "Content-Type: application/json" \
-  --header "Authorization: $BEARER_AUTH" \
-  --data "$updated_json")
-
-# Step 3: Print the API response
-# echo "$response"
