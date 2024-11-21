@@ -6,7 +6,7 @@ if [ -z "$IMAGE" ]; then
   exit 1
 fi
 
-raw_output=$(trivy image --scanners secret "$IMAGE" --format json)
+raw_output=$(trivy fs --image-config-scanners misconfig "$IMAGE" --format json)
 
 if [ $? -ne 0 ]; then
   echo "Error: Failed to run Trivy scan."

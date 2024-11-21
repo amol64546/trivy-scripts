@@ -6,7 +6,7 @@ if [ -z "$REPO_URL" ]; then
   exit 1
 fi
 
-raw_output=$(trivy repo --scanners secret "$REPO_URL" --format json)
+raw_output=$(trivy fs --scanners misconfig "$REPO_URL" --format json)
 
 if [ $? -ne 0 ]; then
   echo "Error: Failed to run Trivy scan."

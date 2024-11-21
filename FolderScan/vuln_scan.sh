@@ -6,7 +6,7 @@ if [ -z "$PATH" ]; then
   exit 1
 fi
 
-raw_output=$(trivy fs "$PATH" --format json)
+raw_output=$(trivy fs --scanners vuln "$PATH" --format json)
 
 if [ $? -ne 0 ]; then
   echo "Error: Failed to run Trivy scan."
