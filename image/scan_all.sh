@@ -31,4 +31,4 @@ add_id_to_json() {
 
 # Call the function and print the updated JSON
 updated_json=$(add_id_to_json "$json_output")
-echo "$updated_json"
+echo "$updated_json" | jq .
