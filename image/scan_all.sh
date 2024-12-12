@@ -26,7 +26,7 @@ add_id_to_json() {
   # Add the "id" field to the JSON using jq
   updated_json=$(echo "$input_json" | jq --arg id "$random_id" '. + {id: $id}')
   
-  echo "$updated_json"
+  echo "$updated_json" | jq .
 }
 
 # Call the function and print the updated JSON
