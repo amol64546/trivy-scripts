@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Step 1: Validate required environment variables
-if [ -z "$IMAGE" ]; then
-  echo "Error: Missing required environment variables."
-  exit 1
-fi
+# if [ -z "$IMAGE" ]; then
+#   echo "Error: Missing required environment variables."
+#   exit 1
+# fi
 
 raw_output=$(trivy image "$IMAGE" --format json)
 
