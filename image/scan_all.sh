@@ -13,6 +13,6 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-updated_json=$(echo "$raw_output" | sed -n '/^{/,$p')
+updated_json=$(echo "$raw_output")
 
 echo "$updated_json"
